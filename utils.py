@@ -16,7 +16,7 @@ class MovieSearch(object):
         self.data = self.get_data()
 
     def get_movies(self):
-        url = "http://api.rottentomatoes.com/api/public/v1.0/lists/movies/in_theaters.json?apikey=sue27hvce56x25xxwsdewuc6"
+        url = "http://api.rottentomatoes.com/api/public/v1.0/lists/movies/in_theaters.json?apikey=<APIKEY>"
         response = urllib2.urlopen(url)
         data = json.loads(response.read())
         return data
@@ -80,7 +80,7 @@ class NprFeed(object):
 
     def fetch_item(self):
         #Data Layer for fetching RSS feed
-        wd_xml = urllib2.urlopen('http://api.npr.org/query?id=1007&apiKey=MDE3Mjc3Nzk4MDE0MTQ5MTIyNjkzM2M1Ng001')
+        wd_xml = urllib2.urlopen('http://api.npr.org/query?id=1007&apiKey=<APIKEY>')
         #convert to string:
         xml_data = wd_xml.read()
         wd_xml.close()
