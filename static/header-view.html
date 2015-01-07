@@ -1,0 +1,61 @@
+{% extends "dashboard-view.html" %}
+<polymer-element name="header-view">
+  <template>
+    <link rel="stylesheet" href="css/header-view.css"/>
+
+        <paper-shadow z="1">
+
+			<!-- Header -->
+             <section id="header" verticle layout >
+                <header>
+                    <span class="image avatar"><img src="img/avatar.jpg" alt="" /></span>
+                    <h1 id="logo">Alex Daro</h1>
+                    <div horizontal layout end-justified>
+                         <core-menu id="nav">
+                              <core-item label="About" on-tap="{{scrollToTop}}"></core-item>
+                              <core-item label="Things I Can Do" on-tap="{{scrollToTop}}"></core-item>
+                              <core-item label="A Few Accomplishments" on-tap="{{scrollToTop}}"></core-item>
+                              <core-item label="Contact" on-tap="{{scrollToTop}}"></core-item>
+                        </core-menu>
+                    </div>
+                </header>
+
+                <footer>
+                    <ul class="icons" horizontal layout start-justified>
+                        <li><a href="https://twitter.com/aldaro34" class="icon fa-twitter fa-2x" target="_blank"><span class="label">Twitter</span></a></li>
+                        <li><a href="https://www.facebook.com/alex.daro.16" class="icon fa-facebook fa-2x" target="_blank"><span class="label">Facebook</span></a></li>
+                        <li><a href="http://instagram.com/dirkdigler/" class="icon fa-instagram fa-2x" target="_blank"><span class="label">Instagram</span></a></li>
+                        <li><a href="http://github.com/adaro" class="icon fa-github fa-2x" target="_blank"><span class="label">Github</span></a></li>
+                        <li><a href="mailto:alexdaro34@gmail.com" class="icon fa-envelope fa-2x" target="_blank"><span class="label">Email</span></a></li>
+                    </ul>
+                </footer>
+            </section>
+
+        </paper-shadow>
+
+
+  </template>
+  <script>
+  Polymer('header-view', {
+      ready: function() {
+
+//            var base = document.querySelector('core-drawer-panel');
+//            var menu = document.querySelector('core-menu');
+//
+//            menu.addEventListener('core-select', function(e) {
+//              if (e.detail.isSelected) {
+//                scrollToSection(e.detail.item.getAttribute('name'));
+//              }
+//            });
+//
+//            function scrollToSection(id) {
+//              var section = document.getElementById(id);
+//              if (section) {
+//                base.$.headerPanel.scroller.scrollTop = section.offsetTop;
+//              }
+//            }
+          }
+        }
+  );
+  </script>
+</polymer-element>

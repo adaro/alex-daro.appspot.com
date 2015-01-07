@@ -1,0 +1,181 @@
+<!--<link rel="import" href="login-view.html">-->
+<!--<link rel="import" href="header-view.html">-->
+<!--<link rel="import" href="dashboard-view.html">-->
+<polymer-element name="panel-view">
+  <template>
+       <link rel="stylesheet" href="css/dash-view.css"/>
+      <link rel="stylesheet" href="css/header-view.css"/>
+
+    <core-drawer-panel  drawerWidth="450px">
+      <core-header-panel drawer>
+            <section id="header" verticle layout >
+                <span class="image avatar"><img src="img/avatar.jpg" alt="" /></span>
+                <div horizontal center-justified layout>
+                    <core-menu >
+                      <core-item name="one" label="About" on-tap="{{scrollToTopic}}"></core-item>
+                      <core-item name="two" label="Things I Can Do" on-tap="{{scrollToTopic}}"></core-item>
+                      <core-item name="three" label="A Few Accomplishments" on-tap="{{scrollToTopic}}"></core-item>
+                      <core-item name="four" label="Contact" on-tap="{{scrollToTopic}}"></core-item>
+                    </core-menu>
+                </div>
+                <footer>
+                    <ul class="icons" horizontal layout start-justified>
+                        <li><a href="https://twitter.com/aldaro34" class="icon fa-twitter fa-2x" target="_blank"><span class="label">Twitter</span></a></li>
+                        <li><a href="https://www.facebook.com/alex.daro.16" class="icon fa-facebook fa-2x" target="_blank"><span class="label">Facebook</span></a></li>
+                        <li><a href="http://instagram.com/dirkdigler/" class="icon fa-instagram fa-2x" target="_blank"><span class="label">Instagram</span></a></li>
+                        <li><a href="http://github.com/adaro" class="icon fa-github fa-2x" target="_blank"><span class="label">Github</span></a></li>
+                        <li><a href="mailto:alexdaro34@gmail.com" class="icon fa-envelope fa-2x" target="_blank"><span class="label">Email</span></a></li>
+                    </ul>
+                </footer>
+            </section>
+
+      </core-header-panel>
+
+      <core-scroll-header-panel id="panel" main>
+      <core-icon-button icon="menu" core-drawer-toggle></core-icon-button>
+        <div vertical center-justified layout>
+
+            <paper-shadow z="1" >
+
+                  <div flex >
+                    <section id="one">
+                        <div class="panel">
+                            <header class="major">
+                                <h2>Alex Daro</h2>
+                                <p>"It is not the sword, it is the samurai"<br />
+                                   check me out on <a href="http://github.com/adaro">GITHUB</a>.</p>
+                            </header>
+                            <p>Currently working at
+                                <a href="http://digitaldomain.com" target="_blank">
+                                           <b>Digital Domain</b>
+                                </a>, Los Angeles. Hard working, cutting edge developer that enjoys diving deep into client-server code. Interested in developing RESTful APIs using the HTTP protocol. Love solving big data problems with clever solutions.
+
+                                Full stack development - From the model and database schema to putting the final touches on the client side User Interface.
+
+                                Server side: Python - Django, Urllib2, Flask, JavaScript - Nodejs.
+
+                                Client Side: Angularjs, jQuery, pure Javascript, Highcharts.
+
+                                Caching/Messaging: Memcached, Redis and RabbitMQ
+
+                                Interests: Big Data, Caching Techniques, Algorithms, Data Structures, Visual Effects, REST APIs
+                                and <a href="http://beeradvocate.com" target="_blank">beer</a>, of course.
+                            </p>
+                        </div>
+                    </section>
+
+                  </div>
+                  <div flex class="panel">
+
+						<section id="two">
+							<div class="container">
+								<h3>Things I Can Do</h3>
+								<p>Full Stack Development</p>
+                                <core-media-query query="max-width: 640px"
+                                                  queryMatches="{{phoneScreen}}"></core-media-query>
+                                <div layout vertical?="{{phoneScreen}}" horizontal?="{{!phoneScreen}}" >
+                                    <ul auto-vertical class="feature-icons">
+                                        <li class="fa-code">Django/Flask/NodeJS</li>
+                                        <li class="fa-desktop">AngularJS/jQuery/HTML/CSS</li>
+                                        <li class="fa-random">AJAX/JSON/XML/YAML/RSS</li>
+                                    </ul>
+                                    <ul auto-vertical class="feature-icons">
+                                        <li class="fa-database">MySQL/PostgreSQL</li>
+                                        <li class="fa-terminal">LINUX/UNIX</li>
+                                        <li class="fa-tasks"> Memcached/Redis/RabbitMQ</li>
+                                    </ul>
+                                </div>
+
+							</div>
+						</section>
+
+                  </div>
+
+                    <div flex class="panel">
+
+                        <section id="three">
+							<div class="container">
+								<h3>A Few Accomplishments</h3>
+								<p>"I know a lot about a little and a little about a lot." </p>
+								<div class="features">
+									<article horizontal layout wrap>
+									    <img src="img/IMG_6772_r.JPG" />
+                                        <span flex></span>
+										<div end-justified class="inner">
+											<h4>Dues Paid</h4>
+											<p>Night shift - rendering IO Admin for one of the largest VFX companies in
+                                                the world. Lots and lots of <b>Python</b> and <b>COFFEE</b>. Countless hours of
+                                                learning, developing and contributing to the following
+                                            <a href="http://www.digitaldomain.com/categories/1/lists/1" target="_blank"><b>Feature Films</b></a>,
+                                            <a href="http://www.digitaldomain.com/categories/2/lists/4" target="_blank"><b> Advertising Commercials</b></a> and
+                                            <a href="http://www.digitaldomain.com/categories/3/lists/9" target="_blank"><b>Games</b></a>!</p>
+                                        </div>
+									</article>
+									<article horizontal layout wrap>
+										<img src="img/IMG_6850_r.JPG" />
+                                        <span flex></span>
+										<div end-justified class="inner" >
+											<h4>Software Engineer</h4>
+											<p>Currently work as a Software Engineer for <a href="http://digitaldomain.com" target="_blank">
+                                               <b>Digital Domain</b></a> where everyday I get to work with some excellent artists
+                                                and develop clever solutions to challenging problems within our VFX pipeline
+                                            </p>
+										</div>
+									</article>
+									<article horizontal layout wrap>
+										<img src="img/IMG_6895_r.JPG"/>
+                                        <span flex></span>
+										<div end-justified  class="inner">
+											<h4>Tied The Knot!</h4>
+											<p>Got Married Summer, 2014 to my lovely wife, <a href="https://www.linkedin.com/pub/ruth-jahja/40/715/610" target="_blank"><b>Ruth Jahja-Daro</b></a></p>
+										</div>
+									</article>
+
+
+
+								</div>
+							</div>
+						</section>
+
+                    </div>
+
+                    <div flex class="panel">
+                        <!-- Four -->
+                        <section id="four" end-justified>
+                            <div class="container">
+                                <h3>Contact Me</h3>
+                                <p>Feel free to contact me anytime!</p>
+                                <ul class="icons">
+                                    <li><a href="https://twitter.com/aldaro34" target="_blank" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+                                    <li><a href="https://www.facebook.com/alex.daro.16" target="_blank" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+                                    <li><a href="http://instagram.com/dirkdigler/" target="_blank" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+                                    <li><a href="http://github.com/adaro" target="_blank" class="icon fa-github"><span class="label">Github</span></a></li>
+                                    <li><a href="mailto:alexdaro34@gmail.com" target="_blank" class="icon fa-envelope"><span class="label">Email</span></a></li>
+                                </ul>
+
+                            </div>
+                        </section>
+
+                    </div>
+
+
+        </paper-shadow>
+
+    </div>
+      </core-scroll-header-panel>
+    </core-drawer-panel>
+  </template>
+  <script>
+  Polymer('panel-view', {
+              scrollToTopic: function (e) {
+                  var id = e.target.getAttribute('name');
+                  console.log(id)
+                  if (id) {
+                      console.log(this.$.panel)
+                      this.$.panel.scroller.scrollTop = this.$[id].offsetTop - 80;
+                  }
+              }
+          }
+  );
+  </script>
+</polymer-element>

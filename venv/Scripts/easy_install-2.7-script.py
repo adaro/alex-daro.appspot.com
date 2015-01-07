@@ -1,4 +1,4 @@
-#!C:\Users\Alex\PycharmProjects\alex-daro\venv\Scripts\python.exe
+#!C:\Users\Alex\PycharmProjects\blog-ad\venv\Scripts\python.exe
 # EASY-INSTALL-ENTRY-SCRIPT: 'setuptools==1.1.5','console_scripts','easy_install-2.7'
 __requires__ = 'setuptools==1.1.5'
 import sys

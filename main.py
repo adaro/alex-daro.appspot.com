@@ -5,27 +5,32 @@ sys.path.insert(1, os.path.join(os.path.abspath("."), 'venv/Lib/site-packages'))
 
 from flask import Flask, request
 from flask import render_template
-from utils import MovieSearch
-
-
 app = Flask(__name__)
+from google.appengine.api import memcache
 
 @app.route('/', methods=['GET'])
 def render_html():
-    return render_template('index.html')
+    user = memcache.get("user")
+    if user is None:
+        pass #render loginview
+    else:
+        print "Got value: " + user # return early and render dash
+
+    return render_template('base.html')
 
 @app.route('/get', methods=['GET'])
 def get():
-    movies = MovieSearch()
-    print movies.data
-    jsonout = json.dumps(movies.data)
+    context = {"login": 1, #users.create_login_url('/'),
+               "logout": 2 # users.create_logout_url('/')
+               }
+    jsonout = json.dumps(context)
     return jsonout
 
 @app.route('/post', methods=['POST'])
 def post():
-    jsonout = json.loads(request.data)["data"]
-    print jsonout
-    response_data = json.dumps({"response_data": "yo"})
+    print request.data
+    memcache.set("user", request.data)
+    response_data = json.dumps({"set-user": request.data})
     return response_data
 
 if __name__ == '__main__':

@@ -1,0 +1,61 @@
+<polymer-element name="login-view">
+  <template>
+    <style>
+    :host {
+      display: block;
+      position: relative;
+      background-color: white;
+      width: 100%;
+      font-size: 1.2rem;
+      font-weight: 300;
+    }
+    paper-fab.green{
+        background: #259b24;
+        }
+    polyfill-next-selector { content: '.login-header h2'; }
+    .login-header ::content h2 {
+      margin: 0;
+      font-size: 1.8rem;
+      font-weight: 300;
+    }
+    polyfill-next-selector { content: '.login-header img'; }
+    .login-header ::content img {
+      width: 70px;
+      border-radius: 50%;
+      margin: 10px;
+    }
+    </style>
+    <div class="login-header" horizontal center-justified layout>
+
+      <paper-input
+          value={{user}}
+          floatingLabel
+          pattern="^.+$"
+          error="Input required"
+          label="Login"
+          required>
+      </paper-input>
+      <paper-fab on-click="{{login}}" mini self-end icon="done" class="green"></paper-fab>
+    </div>
+
+    <core-ajax auto="false" id="postLogin" url="../post" handleAs="JSON" method="POST"
+               contentType = 'application/json'
+               body={{user}}></core-ajax>
+
+    <content></content>
+  </template>
+  <script>
+  Polymer('login-view', {
+    user: this.user,
+    login: function(event) {
+        var response = this.$.postLogin.go();
+        console.dir(response)
+
+        //TODO: check auth
+        var pages = document.querySelector('core-pages');
+        pages.selected = (pages.selected + 1) % pages.children.length;
+        pages.children[1].user = this.user
+    }
+  });
+  </script>
+</polymer-element>

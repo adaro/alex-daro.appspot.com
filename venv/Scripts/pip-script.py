@@ -1,4 +1,4 @@
-#!C:\Users\Alex\PycharmProjects\alex-daro\venv\Scripts\python.exe
+#!C:\Users\Alex\PycharmProjects\blog-ad\venv\Scripts\python.exe
 # EASY-INSTALL-ENTRY-SCRIPT: 'pip==1.4.1','console_scripts','pip'
 __requires__ = 'pip==1.4.1'
 import sys
