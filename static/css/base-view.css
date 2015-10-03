@@ -64,7 +64,7 @@ core-drawer-panel:not([narrow]) #navicon {
 		line-height: 1.75em;
 	}
 
-	a {
+	a, a > b {
 		-moz-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
 		-webkit-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
 		-o-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
@@ -79,7 +79,10 @@ core-drawer-panel:not([narrow]) #navicon {
 			border-bottom-color: transparent;
 			color: #4acaa8 !important;
 		}
-
+		a > b:hover {
+			border-bottom-color: transparent;
+			color: #4acaa8 !important;
+		}
 	strong, b {
 		color: #777;
 		font-weight: 700;
@@ -252,6 +255,11 @@ core-drawer-panel:not([narrow]) #navicon {
 		font-size: 0.9em;
 		font-weight: 700;
 		margin: 0 0 1.125em 0;
+	}
+
+
+core-item:hover{
+	    cursor:pointer !important;
 	}
 
 	input::-moz-focus-inner {
